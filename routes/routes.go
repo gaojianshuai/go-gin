@@ -31,7 +31,7 @@ func SetupRouter() *gin.Engine {
 				authenticated.DELETE("/:id", handlers.DeletePost)
 			}
 
-			comments := posts.Group("/:post_id/comments")
+			comments := posts.Group("/:id/comments")
 			{
 				comments.GET("", handlers.GetComments)
 				comments.Use(middleware.AuthMiddleware())

@@ -15,7 +15,7 @@ type CreateCommentRequest struct {
 
 func CreateComment(c *gin.Context) {
 	userID, _ := c.Get("user_id")
-	postID, err := strconv.Atoi(c.Param("post_id"))
+	postID, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid post ID"})
 		return
@@ -51,7 +51,7 @@ func CreateComment(c *gin.Context) {
 }
 
 func GetComments(c *gin.Context) {
-	postID, err := strconv.Atoi(c.Param("post_id"))
+	postID, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid post ID"})
 		return
