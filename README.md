@@ -14,7 +14,7 @@
 
 ## 技术栈
 
-- Go 1.21+
+- Go 1.25+
 - Gin Web 框架
 - GORM ORM
 - MySQL 数据库
